@@ -1,11 +1,12 @@
 import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { OffersService } from '../services/offers.service';
 import { OfferModel } from '../models/offer.model';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-offers',
   standalone: true,
-  imports: [],
+  imports: [NgFor],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css'
 })
