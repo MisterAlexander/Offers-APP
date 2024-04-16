@@ -9,6 +9,14 @@
         <th>Price</th>
       </tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
+      <tr *ngFor="let offer of offers">
+        <td>{{offer.id}}</td>
+        <td>{{offer.destination}}</td>
+        <td>{{offer.duration}}</td>
+        <td>{{offer.hotel}}</td>
+        <td>{{offer.price}}</td>
+      </tr>
+    </tbody>
   </table>
 </div>
