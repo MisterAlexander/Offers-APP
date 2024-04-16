@@ -1,5 +1,6 @@
 import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { OffersService } from '../services/offers.service';
+import { OfferModel } from '../models/offer.model';
 
 @Component({
   selector: 'app-offers',
