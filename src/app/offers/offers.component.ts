@@ -9,6 +9,7 @@ import { OffersService } from '../services/offers.service';
   styleUrl: './offers.component.css'
 })
 export class OffersComponent implements OnInit {
+  offers: OfferModel[] = [];
 
   constructor(private offersService: OffersService){}
 
