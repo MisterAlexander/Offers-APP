@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { OffersService } from '../services/offers.service';
 
 @Component({
   selector: 'app-offers',
@@ -7,15 +8,13 @@ import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css'
 })
-export class OffersComponent implements OnInit, OnChanges, OnDestroy {
+export class OffersComponent implements OnInit {
+
+  constructor(private offersService: OffersService){}
+
   ngOnInit(): void {
-    console.log("Offers compononet initiallized!");
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("Changes Loading Succes!");
-  }
-ngOnDestroy(): void {
-  console.log("Destroy Called!");
+    this.offersService.getAll()
+  
 }
 
 }
