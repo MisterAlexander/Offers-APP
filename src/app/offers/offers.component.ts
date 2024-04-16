@@ -21,10 +21,10 @@ export class OffersComponent implements OnInit {
       this.offers = res.map((offer:any) =>{
         return{
           id: offer.id,
-          destination: offer.Destination,
-          duration: offer.Duration,
-          hotel:  offer.Hotel,
-          price: offer.Price
+          destination: offer.destination,
+          duration: offer.duration,
+          hotel:  offer.hotel,
+          price: offer.price
         }
       })
     })
