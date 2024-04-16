@@ -1,12 +1,13 @@
-import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
 import { OffersService } from '../services/offers.service';
 import { OfferModel } from '../models/offer.model';
-import { NgClass, NgFor, NgForOf } from '@angular/common';
+import { NgFor} from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-offers',
   standalone: true,
-  imports: [NgFor, NgClass,NgForOf],
+  imports: [NgFor],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css'
 })
@@ -20,10 +21,10 @@ export class OffersComponent implements OnInit {
       this.offers = res.map((offer:any) =>{
         return{
           id: offer.id,
-          offerDestination: offer.Destination,
-          offerDuration: offer.Duration,
-          offerHotel:  offer.Hotel,
-          offerPrice: offer.Price
+          destination: offer.Destination,
+          duration: offer.Duration,
+          hotel:  offer.Hotel,
+          price: offer.Price
         }
       })
     })
