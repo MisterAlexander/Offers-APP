@@ -3,19 +3,24 @@
         <thead>
             <tr>
                 <th>id</th>
-                <th>destination</th>
-                <th>duration</th>
-                <th>hotel</th>
-                <th>price</th>
+                <th>Destination</th>
+                <th>Duration</th>
+                <th>Hotel</th>
+                <th>Price</th>
+                <th>Action</th>
             </tr>
         </thead> 
         <tbody>
             <tr *ngFor="let offer of offers">
-                <td>{{offer.id}}</td>
-                <td>{{offer.destination}}</td>
-                <td>{{offer.duration}}</td>
-                <td>{{offer.hotel}}</td>
-                <td>{{offer.price}}</td>
+                <td>{{ offer.id }}</td>
+                <td>{{ offer.destination }}</td>
+                <td>{{ offer.duration }}</td>
+                <td>{{ offer.hotel }}</td>
+                <td>{{ offer.price }}</td>
+                <td>
+                    <button>UPDATE</button>
+                    <button>DELETE</button>
+                </td>
             </tr>
         </tbody>
     </table>
