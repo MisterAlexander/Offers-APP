@@ -16,7 +16,15 @@ export class OffersComponent implements OnInit {
 
   ngOnInit(): void {
     this.offersService.getAll().subscribe(res => {
-      console.log(res);
+      this.offers = res.map((offer:any) =>{
+        return{
+          id: offer.id,
+          offerDestination: offer.offerDestination,
+          offerDuration: offer.offerDuration,
+          offerHotel:  offer.offerHotel,
+          offerPrice: offer.offerPrice
+        }
+      })
     })
 
  }
