@@ -17,4 +17,5 @@ export class OffersComponent implements OnInit, OnChanges, OnDestroy {
 ngOnDestroy(): void {
   console.log("Destroy Called!");
 }
+
 }
