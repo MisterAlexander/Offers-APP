@@ -1,7 +1,7 @@
 export interface OfferModel{
     id:number,
-    destination:String,
-    duration:String,
-    hotel:String,
-    price:String
+    destination:string,
+    duration:string,
+    hotel:string,
+    price:string
 }
