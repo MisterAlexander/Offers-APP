@@ -11,6 +11,6 @@ export class OffersService {
   constructor(private httpClient: HttpClient) { }
 
   getAll(): Observable<any>{
-    return this.httpClient.get("http://localhost:8080/offers")
+    return this.httpClient.get("http://localhost:8080/offers");
   }
 }
