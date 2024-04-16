@@ -13,8 +13,10 @@ export class OffersComponent implements OnInit {
   constructor(private offersService: OffersService){}
 
   ngOnInit(): void {
-    this.offersService.getAll()
-  
-}
+    this.offersService.getAll().subscribe(res => {
+      console.log(res);
+    })
+
+ }
 
 }
