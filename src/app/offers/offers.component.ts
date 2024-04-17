@@ -2,17 +2,21 @@ import { Component, OnInit,} from '@angular/core';
 import { OffersService } from '../services/offers.service';
 import { OfferModel } from '../models/offer.model';
 import { NgFor} from '@angular/common';
+import {MatTableModule} from '@angular/material/table';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 
 @Component({
   selector: 'app-offers',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor,MatTableModule,MatSlideToggleModule],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css'
 })
 export class OffersComponent implements OnInit {
   offers: OfferModel[] = [];
 dataSource: any;
+displayedColumns: any;
 
   constructor(private offersService: OffersService){}
 

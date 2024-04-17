@@ -10,7 +10,7 @@ import {MatTableModule} from '@angular/material/table';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, OffersComponent,HttpClientModule,MatSlideToggleModule]
+    imports: [RouterOutlet, OffersComponent,HttpClientModule, MatSlideToggleModule, MatTableModule]
 })
 export class AppComponent {
   title = 'Offers-app';
