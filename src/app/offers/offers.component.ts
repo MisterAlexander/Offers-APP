@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild,} from '@angular/core';
+import { AfterViewInit, Component, ViewChild,} from '@angular/core';
 import { OffersService } from '../services/offers.service';
 import { OfferModel } from '../models/offer.model';
 import { NgFor} from '@angular/common';
@@ -16,15 +16,13 @@ import {MatPaginator} from '@angular/material/paginator';
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css'
 })
-export class OffersComponent implements OnInit {
+export class OffersComponent implements AfterViewInit {
   displayedColumns: string[] = ['ID', 'DESTINATION', 'DURATION', 'HOTEL', 'PRICE', 'UPDATE', 'DELETE'];
 dataSource: any;
 
 @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private offersService: OffersService){}
-
-  ngOnInit(): void {
+  constructor(private offersService: OffersService){
     this.offersService.getAll().subscribe(res => {
       this.dataSource = new MatTableDataSource<OfferModel>(res.map((offer:any) =>{
         return{
@@ -35,15 +33,18 @@ dataSource: any;
           price: offer.price
         }
       }));
-     
     })
-
  }
+ ngAfterViewInit() {
+   this.dataSource.paginator = this.paginator;
+ }
+
 update():void{
-  console.log("Update Called");
+  console.log("Update Called")
 }
+
 delete():void{
-  console.log("Delete Called");
+  console.log("Delete Called")
 }
 
 }
