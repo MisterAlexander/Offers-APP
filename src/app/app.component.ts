@@ -14,7 +14,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 export class AppComponent {
   title = 'Offers-app';
 
-  toggleClick():void{
-    console.log("Toggle Clicked");
+
   }
-}
+
