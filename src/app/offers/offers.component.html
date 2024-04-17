@@ -8,33 +8,39 @@
   </ng-container>
 
   
-  <ng-container matColumnDef="destination">
+  <ng-container matColumnDef="DESTINATION">
     <th mat-header-cell *matHeaderCellDef> Destination </th>
     <td mat-cell *matCellDef="let offer"> {{offer.destination}} </td>
   </ng-container>
 
   
-  <ng-container matColumnDef="Duration">
+  <ng-container matColumnDef="DURATION">
     <th mat-header-cell *matHeaderCellDef> Duration </th>
     <td mat-cell *matCellDef="let offer"> {{offer.duration}} </td>
   </ng-container>
 
   
-  <ng-container matColumnDef="Hotel">
+  <ng-container matColumnDef="HOTEL">
     <th mat-header-cell *matHeaderCellDef> Hotel </th>
     <td mat-cell *matCellDef="let offer"> {{offer.hotel}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="Price">
+  <ng-container matColumnDef="PRICE">
     <th mat-header-cell *matHeaderCellDef> Price </th>
     <td mat-cell *matCellDef="let offer"> {{offer.price}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="Actions">
-    <th mat-header-cell *matHeaderCellDef> Actions </th>
+  <ng-container matColumnDef="UPDATE">
+    <th mat-header-cell *matHeaderCellDef> Update </th>
     <td mat-cell *matCellDef="let offer">
-        <button mat-flat-button color="primary" (click)="update()">UPDATE</button>
-        <button mat-flat-button color="warn" (click)="delete()">DELETE</button>
+        <button mat-stroked-button color="primary" (click)="update()">UPDATE</button>
+    </td>    
+  </ng-container>
+
+  <ng-container matColumnDef="DELETE">
+    <th mat-header-cell *matHeaderCellDef> Delete </th>
+    <td mat-cell *matCellDef="let offer">
+        <button mat-stroked-button color="warn" (click)="delete()">DELETE</button>
     </td>    
   </ng-container>
 

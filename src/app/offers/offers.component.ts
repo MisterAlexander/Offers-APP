@@ -15,7 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
   styleUrl: './offers.component.css'
 })
 export class OffersComponent implements OnInit {
-  displayedColumns: string[] = ['ID', 'DESTINATION', 'DURATION', 'HOTEL', 'PRICE'];
+  displayedColumns: string[] = ['ID', 'DESTINATION', 'DURATION', 'HOTEL', 'PRICE', 'UPDATE', 'DELETE'];
 dataSource: any;
 
   constructor(private offersService: OffersService){}
