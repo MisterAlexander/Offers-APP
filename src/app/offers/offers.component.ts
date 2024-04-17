@@ -2,7 +2,7 @@ import { Component, OnInit,} from '@angular/core';
 import { OffersService } from '../services/offers.service';
 import { OfferModel } from '../models/offer.model';
 import { NgFor} from '@angular/common';
-import {MatTableModule} from '@angular/material/table';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
@@ -15,14 +15,15 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 })
 export class OffersComponent implements OnInit {
   displayedColumns: string[] = ['ID', 'DESTINATION', 'DURATION', 'HOTEL', 'PRICE'];
-  offers: OfferModel[] = [];
 dataSource: any;
+  offers: OfferModel[] = [];
+
 
   constructor(private offersService: OffersService){}
 
   ngOnInit(): void {
     this.offersService.getAll().subscribe(res => {
-      this.offers = res.map((offer:any) =>{
+      this.dataSource = new MatTableDataSource<OfferModel>(res.map((offer:any) =>{
         return{
           id: offer.id,
           destination: offer.destination,
@@ -30,7 +31,8 @@ dataSource: any;
           hotel:  offer.hotel,
           price: offer.price
         }
-      })
+      }));
+     
     })
 
  }
