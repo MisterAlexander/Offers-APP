@@ -3,24 +3,19 @@ import { OffersService } from '../services/offers.service';
 import { OfferModel } from '../models/offer.model';
 import { NgFor} from '@angular/common';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 
 
 @Component({
   selector: 'app-offers',
   standalone: true,
-  imports: [NgFor,MatTableModule,MatSlideToggleModule,MatButtonModule, MatDividerModule, MatIconModule],
+  imports: [NgFor,MatTableModule,MatButtonModule],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css'
 })
 export class OffersComponent implements OnInit {
   displayedColumns: string[] = ['ID', 'DESTINATION', 'DURATION', 'HOTEL', 'PRICE'];
 dataSource: any;
-  offers: OfferModel[] = [];
-
 
   constructor(private offersService: OffersService){}
 
