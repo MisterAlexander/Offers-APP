@@ -5,12 +5,13 @@ import { NgFor} from '@angular/common';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @Component({
   selector: 'app-offers',
   standalone: true,
-  imports: [NgFor,MatTableModule,MatButtonModule,MatIconModule],
+  imports: [NgFor,MatTableModule,MatButtonModule,MatIconModule,MatPaginatorModule],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css'
 })
