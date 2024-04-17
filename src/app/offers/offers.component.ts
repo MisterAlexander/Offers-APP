@@ -12,7 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 @Component({
   selector: 'app-offers',
   standalone: true,
-  imports: [NgFor,MatTableModule,MatSlideToggleModule,MatIconModule,MatDividerModule,MatButtonModule],
+  imports: [NgFor,MatTableModule,MatSlideToggleModule,MatButtonModule, MatDividerModule, MatIconModule],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css'
 })
