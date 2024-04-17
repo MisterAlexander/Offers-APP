@@ -1,4 +1,4 @@
-import { Component, OnInit,} from '@angular/core';
+import { Component, OnInit, ViewChild,} from '@angular/core';
 import { OffersService } from '../services/offers.service';
 import { OfferModel } from '../models/offer.model';
 import { NgFor} from '@angular/common';
@@ -19,6 +19,8 @@ import {MatPaginator} from '@angular/material/paginator';
 export class OffersComponent implements OnInit {
   displayedColumns: string[] = ['ID', 'DESTINATION', 'DURATION', 'HOTEL', 'PRICE', 'UPDATE', 'DELETE'];
 dataSource: any;
+
+@ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private offersService: OffersService){}
 
