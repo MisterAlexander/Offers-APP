@@ -12,5 +12,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     imports: [RouterOutlet, OffersComponent,HttpClientModule,MatSlideToggleModule]
 })
 export class AppComponent {
+clickToggle() {
+throw new Error('Method not implemented.');
+}
   title = 'Offers-app';
 }
