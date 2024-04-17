@@ -14,9 +14,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   styleUrl: './offers.component.css'
 })
 export class OffersComponent implements OnInit {
+  displayedColumns: string[] = ['ID', 'DESTINATION', 'DURATION', 'HOTEL', 'PRICE'];
   offers: OfferModel[] = [];
 dataSource: any;
-displayedColumns: any;
 
   constructor(private offersService: OffersService){}
 
