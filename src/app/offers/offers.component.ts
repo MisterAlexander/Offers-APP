@@ -63,7 +63,7 @@ dataSource: any;
       this.offersService.addOffer(res.data).subscribe();
     } else if(res.event === 'update'){
       if(offer){
-        this.offersService.updateoffer(offer.id.toString(), res.data).subscribe();
+        this.offersService.updateOffer(offer.id.toString(), res.data).subscribe();
       }
     }
   })

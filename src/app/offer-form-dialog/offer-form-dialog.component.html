@@ -1,6 +1,6 @@
 <div>
 
-    <form [formGroup]="countryForm">
+    <form [formGroup]="offerForm">
         <mat-form-field appearance="fill" style="margin: 10px 10px 10px 10px;">
             <mat-label>Country</mat-label>
             <input matInput id="countryName" type="text" formControlName="countryName">
@@ -21,7 +21,7 @@
         </mat-form-field>
 
         <div>
-            <button mat-raised-button color="primary" style="margin: 10px 10px 10px 10px;" [disabled]="!countryForm.valid" type="submit" (click)="onSubmit()"> Save </button>
+            <button mat-raised-button color="primary" style="margin: 10px 10px 10px 10px;" [disabled]="!offerForm.valid" type="submit" (click)="onSubmit()"> Save </button>
             <button mat-raised-button color="warn" (click)="close()"> Cancel </button>
         </div>
     </form>
