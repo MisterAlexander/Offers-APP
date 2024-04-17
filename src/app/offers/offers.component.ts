@@ -30,5 +30,11 @@ export class OffersComponent implements OnInit {
     })
 
  }
+update():void{
+  console.log("Update Called");
+}
+delete():void{
+  console.log("Delete Called");
+}
 
 }
