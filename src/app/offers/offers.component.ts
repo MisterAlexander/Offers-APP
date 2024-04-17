@@ -37,4 +37,8 @@ delete():void{
   console.log("Delete Called");
 }
 
+clickToggle():void{
+  console.log("Toggle Clicked");
+}
+
 }
