@@ -2,7 +2,6 @@ import { Component, OnInit,} from '@angular/core';
 import { OffersService } from '../services/offers.service';
 import { OfferModel } from '../models/offer.model';
 import { NgFor} from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-offers',
@@ -13,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class OffersComponent implements OnInit {
   offers: OfferModel[] = [];
+dataSource: any;
 
   constructor(private offersService: OffersService){}
 

@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { OffersComponent } from "./offers/offers.component";
 import { HttpClientModule } from '@angular/common/http';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatTableModule} from '@angular/material/table';
 
 @Component({
     selector: 'app-root',
