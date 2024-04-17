@@ -7,6 +7,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatPaginator} from '@angular/material/paginator';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogRef,
+  MatDialogTitle,
+  MatDialogContent,
+  MatDialogActions,
+  MatDialogClose,
+} from '@angular/material/dialog';
+import { offerFormDialogComponent } from '../offer-form-dialog/offer-form-dialog.component';
 
 
 @Component({
@@ -22,7 +32,7 @@ dataSource: any;
 
 @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private offersService: OffersService){
+  constructor(private offersService: OffersService, public dialog: MatDialog){
     this.offersService.getAll().subscribe(res => {
       this.dataSource = new MatTableDataSource<OfferModel>(res.map((offer:any) =>{
         return{
@@ -39,12 +49,37 @@ dataSource: any;
    this.dataSource.paginator = this.paginator;
  }
 
-update():void{
-  console.log("Update Called")
+ openDialog(offer?: OfferModel): void{
+  const dialogRef = this.dialog.open(offerFormDialogComponent, {
+    width: '500px',
+    backdropClass: 'custom-dialog-backdrop-class',
+    panelClass: 'custom-dialog-panel-class',
+    data: offer
+  });
+
+  dialogRef.afterClosed().subscribe(res=>{
+    console.log(res)
+    if(res.event === 'add'){
+      this.offersService.addOffer(res.data).subscribe();
+    } else if(res.event === 'update'){
+      if(offer){
+        this.offersService.updateoffer(offer.id.toString(), res.data).subscribe();
+      }
+    }
+  })
 }
 
-delete():void{
-  console.log("Delete Called")
+
+
+delete(id: string): void{
+  this.offersService.delete(id).subscribe(res=>{
+    console.log(res);
+    location.reload();
+  });
 }
+
+
+
+
 
 }

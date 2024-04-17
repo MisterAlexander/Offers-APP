@@ -1,7 +1,7 @@
 <div class="mat-elevation-z8 card">
 
   <div id="add-button">
-    <button mat-mini-fab color="primary" aria-label="Add Offer">
+    <button mat-mini-fab color="primary" (click)="openDialog()" aria-label="Add Offer">
       <mat-icon>plus_one</mat-icon>
       </button>
   </div>
@@ -39,14 +39,14 @@
   <ng-container matColumnDef="UPDATE">
     <th mat-header-cell *matHeaderCellDef> Update </th>
     <td mat-cell *matCellDef="let offer">
-        <button mat-flat-button color="primary" (click)="update()">UPDATE</button>
+        <button mat-flat-button color="primary" (click)="openDialog(offer)">UPDATE</button>
     </td>    
   </ng-container>
 
   <ng-container matColumnDef="DELETE">
     <th mat-header-cell *matHeaderCellDef> Delete </th>
     <td mat-cell *matCellDef="let offer">
-        <button mat-flat-button color="warn" (click)="delete()">DELETE</button>
+        <button mat-flat-button color="warn" (click)="delete(offer.id)">DELETE</button>
     </td>    
   </ng-container>
 
