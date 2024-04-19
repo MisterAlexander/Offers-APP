@@ -28,7 +28,7 @@ import { offerFormDialogComponent } from '../offer-form-dialog/offer-form-dialog
 })
 export class OffersComponent implements AfterViewInit {
   displayedColumns: string[] = ['ID', 'DESTINATION', 'DURATION', 'HOTEL', 'PRICE', 'UPDATE', 'DELETE'];
-dataSource: any;
+dataSource: MatTableDataSource<OfferModel >;
 
 @ViewChild(MatPaginator) paginator: MatPaginator;
 
