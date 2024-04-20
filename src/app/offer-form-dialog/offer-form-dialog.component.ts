@@ -25,10 +25,10 @@ import { OfferModel } from '../models/offer.model';
 })
 export class offerFormDialogComponent implements OnInit{
   offerForm = new FormGroup({
-    Destination: new FormControl('', Validators.required),
-    Duration: new FormControl('', Validators.required),
-    Hotel: new FormControl('', Validators.required),
-    Price: new FormControl('', Validators.required)
+    destination: new FormControl('', Validators.required),
+    duration: new FormControl('', Validators.required),
+    hotel: new FormControl('', Validators.required),
+    price: new FormControl('', Validators.required)
   });
 
   currentoffer: OfferModel;
@@ -42,19 +42,19 @@ export class offerFormDialogComponent implements OnInit{
 
   ngOnInit():void{
     if(this.currentoffer){
-      this.offerForm.controls.Destination.setValue(this.currentoffer.destination);
-      this.offerForm.controls.Duration.setValue(this.currentoffer.duration);
-      this.offerForm.controls.Hotel.setValue(this.currentoffer.hotel);
-      this.offerForm.controls.Price.setValue(this.currentoffer.price.toString());
+      this.offerForm.controls.destination.setValue(this.currentoffer.destination);
+      this.offerForm.controls.duration.setValue(this.currentoffer.duration);
+      this.offerForm.controls.hotel.setValue(this.currentoffer.hotel);
+      this.offerForm.controls.price.setValue(this.currentoffer.price.toString());
     }
   }
 
   onSubmit(){
     const newoffer = {
-      Destination: this.offerForm.controls.Destination.getRawValue(),
-      Duration: this.offerForm.controls.Duration.getRawValue(),
-      Hotel: this.offerForm.controls.Hotel.getRawValue(),
-      Price: this.offerForm.controls.Price.getRawValue()
+      destination: this.offerForm.controls.destination.getRawValue(),
+      duration: this.offerForm.controls.duration.getRawValue(),
+      hotel: this.offerForm.controls.hotel.getRawValue(),
+      price: this.offerForm.controls.price.getRawValue()
     }
 
     console.log(newoffer);
